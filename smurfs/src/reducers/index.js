@@ -2,6 +2,9 @@ import {
   GET_START,
   GET_SUCCESS,
   GET_FAILURE,
+  ADD_START,
+  ADD_SUCCESS,
+  ADD_FAILURE
 } from '../actions';
 
 
@@ -32,6 +35,23 @@ import {
         ...state,
         fetchingSmurfs: false,
         error: action.payload,
+      }
+    case ADD_START:
+      return {
+        ...state,
+        addingSmurf: true
+      }
+    case ADD_SUCCESS:
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
+      }
+    case ADD_FAILURE:
+      return {
+        ...state,
+        addingSmurf: false,
+        error: action.payload
       }
      default:
       return state
