@@ -12,9 +12,9 @@ const SmurfList = props => {
     return (
         <div>
         {props.smurfs.map(smurf => (
-        <div key={smurf.smurfId}>
+        <div key={smurf.id}>
         <h2>{smurf.name}</h2>
-        <button onClick={e => deleteSmurf(e, smurf.smurfId)}>Delete Smurf</button>
+        <button onClick={e => deleteSmurf(e, smurf.id)}>Delete Smurf</button>
         </div>
         ))}
         </div>
