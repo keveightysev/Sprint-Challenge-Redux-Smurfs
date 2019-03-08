@@ -4,7 +4,10 @@ import {
   GET_FAILURE,
   ADD_START,
   ADD_SUCCESS,
-  ADD_FAILURE
+  ADD_FAILURE,
+  DELETE_START,
+  DELETE_SUCCESS,
+  DELETE_FAILURE
 } from '../actions';
 
 
@@ -51,6 +54,23 @@ import {
       return {
         ...state,
         addingSmurf: false,
+        error: action.payload
+      }
+    case DELETE_START:
+      return {
+        ...state,
+        deletingSmurf: true
+      }
+    case DELETE_SUCCESS:
+      return {
+        ...state,
+        deletingSmurf: false,
+        smurfs: action.payload
+      }
+    case DELETE_FAILURE:
+      return {
+        ...state,
+        deletingSmurf: false,
         error: action.payload
       }
      default:
